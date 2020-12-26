@@ -104,9 +104,6 @@ int main(int argc, char* const argv[]) {
     std::cout << "f: " << solve_quadprog(G, g0, CE, ce0, CI, ci0, x)
               << std::endl;
     std::cout << "x: " << x << std::endl;
-    /*  for (int i = 0; i < n; i++)
-        std::cout << x[i] << ' ';
-        std::cout << std::endl;	 */
 
     /* FOR DOUBLE CHECKING COST since in the solve_quadprog routine the matrix G
      * is modified */
