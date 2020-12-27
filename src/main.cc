@@ -11,12 +11,28 @@
      -2  4
 
  Solve:
- min f(x) = 1/2 x G x + g0 x
+ min f(x) = 1/2 x^T G x + g0^T x
  s.t.
    x_1 + x_2 = 3
    x_1 >= 0
    x_2 >= 0
    x_1 + x_2 >= 2
+   // ----------------------------------
+   // Dingjiang's understanding
+   x_1 + x_2 = 3
+   // x_1 + x_2 - 3 = 0 -> CE = [1, 1], ce0 = -3;
+
+   x_1 >= 0
+   x_2 >= 0
+   x_1 + x_2 >= 2
+
+   the three line seens to be:
+   1 x_1    0 x_2   1 x_1
+   0 x_2    1 x_1   1 x_1
+    0         0      -2
+   the above two is [1 0 1 ; 0 1  1] for CI
+   the last one is [0 0 -2] for ci
+   // ----------------------------------
 
  The solution is x^T = [1 2] and f(x) = 12
 
@@ -29,6 +45,9 @@
 
  This software may be modified and distributed under the terms
  of the MIT license.  See the LICENSE file for details.
+
+ paper:
+ https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.521.6352&rep=rep1&type=pdf
 */
 
 #include "QuadProg++.hh"
